@@ -1,0 +1,13 @@
+[gd_resource type="Theme" format=3 uid="uid://dxaae83r87thn"]
+
+[ext_resource type="Texture2D" uid="uid://ckvkj8thwjppe" path="res://sprites/breaking_dark.png" id="1_ghhvs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_me6q4"]
+texture = ExtResource("1_ghhvs")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_me6q4")

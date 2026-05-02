@@ -1,0 +1,13 @@
+[gd_resource type="Theme" format=3 uid="uid://bgcvrj1oskbvd"]
+
+[ext_resource type="Texture2D" uid="uid://c70wtmfhl2ild" path="res://sprites/outline_dark_white.png" id="1_3cs1x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_me6q4"]
+texture = ExtResource("1_3cs1x")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_me6q4")

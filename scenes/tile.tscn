@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cbctdxy3ecxmn"]
+
+[ext_resource type="Script" uid="uid://1cm1bh37f1t1" path="res://scripts/tile.gd" id="1_3dk36"]
+[ext_resource type="Texture2D" uid="uid://dbug2m032yq10" path="res://sprites/palettes/dark.png" id="1_ywnoi"]
+[ext_resource type="Theme" uid="uid://dxaae83r87thn" path="res://themes/breaking_dark.tres" id="3_jy7pm"]
+[ext_resource type="Theme" uid="uid://dt6tyedcr1bm7" path="res://themes/breaking_light.tres" id="4_q7utx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy7pm"]
+atlas = ExtResource("1_ywnoi")
+region = Rect2(0, 0, 16, 16)
+
+[node name="Tile" type="TextureButton" unique_id=2012487389]
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_jy7pm")
+script = ExtResource("1_3dk36")
+metadata/_custom_type_script = "uid://1cm1bh37f1t1"
+
+[node name="DarkBreakingPanel" type="Panel" parent="." unique_id=33115887]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("3_jy7pm")
+
+[node name="LightBreakingPanel" type="Panel" parent="." unique_id=261190471]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("4_q7utx")

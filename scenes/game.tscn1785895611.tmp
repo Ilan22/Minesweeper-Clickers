@@ -1,0 +1,364 @@
+[gd_scene format=3 uid="uid://cq2iqplhnluqw"]
+
+[ext_resource type="Script" uid="uid://d2po3wo8l33xi" path="res://scripts/game_manager.gd" id="1_uwrxv"]
+[ext_resource type="Theme" uid="uid://bgcvrj1oskbvd" path="res://themes/outline.tres" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://b0ljh5r0gchwd" path="res://scripts/camera.gd" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://rvxkrdsrprcb" path="res://sprites/coin.png" id="3_iywne"]
+[ext_resource type="FontFile" uid="uid://cs4x2nnnw54eq" path="res://fonts/PIXEARG_.TTF" id="3_lbhrr"]
+[ext_resource type="Theme" uid="uid://ct5siw8atawlr" path="res://themes/button.tres" id="4_p57ef"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5sy4"]
+font = ExtResource("3_lbhrr")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_iywne"]
+line_spacing = 0.0
+font = ExtResource("3_lbhrr")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_lbhrr"]
+font = ExtResource("3_lbhrr")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_p57ef"]
+line_spacing = -1.0
+font = ExtResource("3_lbhrr")
+font_size = 6
+
+[node name="Node2D" type="Control" unique_id=1144214665]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=256163687]
+
+[node name="Top" type="Control" parent="UI" unique_id=1506070931]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 45.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Coins" type="TextureRect" parent="UI/Top" unique_id=1387960594]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -3.5
+offset_right = -64.0
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_iywne")
+
+[node name="CoinsLabel" type="Label" parent="UI/Top/Coins" unique_id=777836732]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -8.0
+offset_right = 29.0
+offset_bottom = 9.0
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_u5sy4")
+vertical_alignment = 1
+
+[node name="PriorLevelPanel" type="Panel" parent="UI/Top" unique_id=711824490]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -11.5
+offset_right = -13.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_lnu2h")
+
+[node name="PriorLevelLabel" type="Label" parent="UI/Top/PriorLevelPanel" unique_id=549682001]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -3.5
+offset_right = 2.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_iywne")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentLevelPanel" type="Panel" parent="UI/Top" unique_id=1822645862]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_lnu2h")
+
+[node name="CurrentLevelLabel" type="Label" parent="UI/Top/CurrentLevelPanel" unique_id=1025091081]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -3.5
+offset_right = 2.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = SubResource("LabelSettings_lbhrr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextLevelPanel" type="Panel" parent="UI/Top" unique_id=426183582]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -11.5
+offset_right = 33.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_lnu2h")
+
+[node name="NextLevelLabel" type="Label" parent="UI/Top/NextLevelPanel" unique_id=1401463095]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -3.5
+offset_right = 2.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "2"
+label_settings = SubResource("LabelSettings_iywne")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelRemainingLabel" type="Label" parent="UI/Top" unique_id=778912284]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 35.0
+offset_top = -11.5
+offset_right = 50.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "(10)"
+label_settings = SubResource("LabelSettings_p57ef")
+vertical_alignment = 1
+
+[node name="LevelHP" type="Label" parent="UI/Top" unique_id=2058356411]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = 9.5
+offset_right = 8.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_p57ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bottom" type="Control" parent="UI" unique_id=2115466624]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -45.0
+offset_right = 90.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Miner1Button" type="Button" parent="UI/Bottom" unique_id=1800178161]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -19.5
+offset_right = -24.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_p57ef")
+
+[node name="Miner1ButtonLabel" type="Label" parent="UI/Bottom/Miner1Button" unique_id=2031443942]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -3.5
+offset_right = 2.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "M1 : 10
+0
+0.0"
+label_settings = SubResource("LabelSettings_iywne")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Miner2Button" type="Button" parent="UI/Bottom" unique_id=1384336307]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_p57ef")
+
+[node name="Miner2ButtonLabel" type="Label" parent="UI/Bottom/Miner2Button" unique_id=1339930081]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -3.5
+offset_right = 2.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "M2 : 10
+0
+0.0"
+label_settings = SubResource("LabelSettings_iywne")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClickButton" type="Button" parent="UI/Bottom" unique_id=644145938]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -19.5
+offset_right = 64.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_p57ef")
+
+[node name="ClickButtonLabel" type="Label" parent="UI/Bottom/ClickButton" unique_id=73788187]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -3.5
+offset_right = 2.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "C : 10
+0
+0.0"
+label_settings = SubResource("LabelSettings_iywne")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1562089408]
+unique_name_in_owner = true
+position = Vector2(90, 160)
+script = ExtResource("2_yqjtg")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1042302281]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
+columns = 7
+
+[node name="GameManager" type="Node" parent="." unique_id=870548900]
+script = ExtResource("1_uwrxv")

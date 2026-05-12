@@ -14,50 +14,54 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Download Godot
+      - name: Download Godot 4
         run: |
-          wget https://github.com/godotengine/godot/releases/download/3.5.3-stable/Godot_v3.5.3-stable_osx.universal.zip
-          unzip Godot_v3.5.3-stable_osx.universal.zip -d godot
-          sudo mv godot/Godot.app /Applications/Godot.app
-          sudo ln -s /Applications/Godot.app/Contents/MacOS/Godot /usr/local/bin/godot
+          wget https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_macos.universal.zip
+          unzip Godot_v4.3-stable_macos.universal.zip -d godot_app
+          sudo mv "godot_app/Godot.app" /Applications/Godot.app
+          sudo ln -sf /Applications/Godot.app/Contents/MacOS/Godot /usr/local/bin/godot
 
       - name: Download Godot Export Templates
         run: |
-          mkdir -p ~/Library/Application\ Support/Godot/templates/3.5.3.stable
-          cd ~/Library/Application\ Support/Godot/templates/3.5.3.stable
-          wget https://github.com/godotengine/godot/releases/download/3.5.3-stable/Godot_v3.5.3-stable_export_templates.tpz
-          tar -xzf Godot_v3.5.3-stable_export_templates.tpz -C ~/Library/Application\ Support/Godot/templates/3.5.3.stable
-          cd templates
-          mv * ..
-          cd ..
-          ls
+          mkdir -p ~/Library/Application\ Support/Godot/export_templates/4.3.stable
+          wget -P /tmp https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
+          unzip /tmp/Godot_v4.3-stable_export_templates.tpz -d /tmp/godot_templates
+          mv /tmp/godot_templates/templates/* ~/Library/Application\ Support/Godot/export_templates/4.3.stable/
 
       - name: Create build directory
-        run: mkdir -p build
+        run: mkdir -p build/ios
 
       - name: Export iOS project
-        run: godot --export "iOS" build/your_project_name.xcodeproj
-        env:
-          DISPLAY: :99.0
+        run: godot --headless --export-release "iOS" build/ios/MinesweepPixel.xcodeproj
 
       - name: Set iOS Deployment Target
-        run: sed -i '' 's/IPHONEOS_DEPLOYMENT_TARGET = 10.0;/IPHONEOS_DEPLOYMENT_TARGET = 12.0;/' build/your_project_name.xcodeproj/project.pbxproj
+        run: |
+          find build/ios -name "project.pbxproj" -exec sed -i '' \
+            's/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]*/IPHONEOS_DEPLOYMENT_TARGET = 12.0/g' {} \;
 
       - name: Build iOS project
-        run: xcodebuild -project build/your_project_name.xcodeproj -scheme your_project_name -configuration Development -archivePath build/your_project_name.xcarchive archive \ CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+        run: |
+          PROJECT=$(find build/ios -name "*.xcodeproj" | head -1)
+          SCHEME=$(basename "$PROJECT" .xcodeproj)
+          xcodebuild -project "$PROJECT" -scheme "$SCHEME" \
+            -configuration Release \
+            -archivePath build/MinesweepPixel.xcarchive \
+            archive \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
 
       - name: Export IPA
         run: |
-          cd build
-          cd your_project_name.xcarchive
-          cd Products
-          cd Applications
-          mkdir Payload
-          mv your_project_name.app Payload/
-          zip -r App.ipa Payload/
-          mv App.ipa ../../../
+          APPS_DIR="build/MinesweepPixel.xcarchive/Products/Applications"
+          mkdir -p "$APPS_DIR/Payload"
+          APP=$(find "$APPS_DIR" -maxdepth 1 -name "*.app" | head -1)
+          mv "$APP" "$APPS_DIR/Payload/"
+          cd "$APPS_DIR"
+          zip -r ../../../../build/App.ipa Payload/
+
       - name: Upload IPA to GitHub Artifacts
         uses: actions/upload-artifact@v4
         with:

@@ -15,6 +15,10 @@ run/main_scene="uid://cq2iqplhnluqw"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SaveManager="*uid://bvkof2q7ytc0p"
+
 [display]
 
 window/size/viewport_width=180
@@ -38,4 +42,6 @@ pointing/emulate_touch_from_mouse=true
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
+viewport/hdr_2d=true
 environment/defaults/default_clear_color=Color(0.047058824, 0.047058824, 0.047058824, 1)

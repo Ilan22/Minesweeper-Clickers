@@ -1,27 +1,30 @@
 [gd_scene format=3 uid="uid://cq2iqplhnluqw"]
 
+[ext_resource type="Theme" uid="uid://ct5siw8atawlr" path="res://themes/button.tres" id="1_5newe"]
 [ext_resource type="Script" uid="uid://d2po3wo8l33xi" path="res://scripts/game_manager.gd" id="1_uwrxv"]
 [ext_resource type="Theme" uid="uid://bgcvrj1oskbvd" path="res://themes/outline.tres" id="2_lnu2h"]
 [ext_resource type="Script" uid="uid://b0ljh5r0gchwd" path="res://scripts/camera.gd" id="2_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://rvxkrdsrprcb" path="res://sprites/coin.png" id="3_iywne"]
 [ext_resource type="FontFile" uid="uid://cs4x2nnnw54eq" path="res://fonts/PIXEARG_.TTF" id="3_lbhrr"]
-[ext_resource type="Theme" uid="uid://ct5siw8atawlr" path="res://themes/button.tres" id="4_p57ef"]
+[ext_resource type="Texture2D" uid="uid://dlv2q8jcu32qb" path="res://sprites/scrollbar_outline.png" id="3_ssvqc"]
 [ext_resource type="Theme" uid="uid://f0rd7j1jep0s" path="res://themes/top_outline.tres" id="5_0tnpc"]
+[ext_resource type="FontFile" uid="uid://cwjm030uv4d3i" path="res://fonts/PIXEAB__.TTF" id="5_264po"]
+[ext_resource type="Texture2D" uid="uid://cinfamn0o7xkq" path="res://sprites/cursor.png" id="6_ca42v"]
 [ext_resource type="Theme" uid="uid://bnrelamqwwj84" path="res://themes/menu_upgrade_outline.tres" id="6_kvuet"]
 [ext_resource type="Theme" uid="uid://c4w2k4cs5sfp" path="res://themes/outline_dark.tres" id="6_vtaks"]
+[ext_resource type="Texture2D" uid="uid://dvg5rda8kaktx" path="res://sprites/stop.png" id="7_bt5mj"]
 [ext_resource type="Script" uid="uid://br5ugyeofclnu" path="res://scripts/helper_manager.gd" id="7_gee14"]
 [ext_resource type="Texture2D" uid="uid://cq5j6i3bijkn7" path="res://sprites/pickaxe.png" id="7_kvpfn"]
 [ext_resource type="Script" uid="uid://dl4l5bleo4vr1" path="res://scripts/helper.gd" id="8_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://cm2wpfyavqnv6" path="res://sprites/shadow.png" id="9_1kice"]
 [ext_resource type="Texture2D" uid="uid://bvplcphyiuqyh" path="res://sprites/outline_light.png" id="9_trtic"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_u5sy4"]
-font = ExtResource("3_lbhrr")
-font_size = 10
-
-[sub_resource type="LabelSettings" id="LabelSettings_p57ef"]
-line_spacing = -1.0
-font = ExtResource("3_lbhrr")
-font_size = 6
+[ext_resource type="Texture2D" uid="uid://c7v040tf61cm7" path="res://sprites/dynamite.png" id="11_ir15t"]
+[ext_resource type="Theme" uid="uid://df4gbul62glx0" path="res://themes/outline_dark_transparent.tres" id="13_37s47"]
+[ext_resource type="Theme" uid="uid://b2l4ux3mkb4ev" path="res://themes/upgrade_button.tres" id="13_bt5mj"]
+[ext_resource type="Texture2D" uid="uid://dkor3qqtgv1sn" path="res://sprites/upgrade_button_color.png" id="14_e1j6l"]
+[ext_resource type="Texture2D" uid="uid://b5v3gun7bf1is" path="res://sprites/laser.png" id="17_37s47"]
+[ext_resource type="Texture2D" uid="uid://6f5cluul10qu" path="res://sprites/drill.png" id="18_e1j6l"]
+[ext_resource type="Texture2D" uid="uid://hwwvkce1vycv" path="res://sprites/atomizer.png" id="21_pl11u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0tnpc"]
 line_spacing = 0.0
@@ -32,15 +35,63 @@ font_size = 8
 font = ExtResource("3_lbhrr")
 font_size = 10
 
-[sub_resource type="LabelSettings" id="LabelSettings_gee14"]
+[sub_resource type="LabelSettings" id="LabelSettings_37s47"]
 line_spacing = 0.0
 font = ExtResource("3_lbhrr")
 font_size = 8
 
-[sub_resource type="LabelSettings" id="LabelSettings_iywne"]
-line_spacing = 0.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_264po"]
+texture = ExtResource("3_ssvqc")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rysoc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ssvqc"]
+texture = ExtResource("9_trtic")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+modulate_color = Color(0.42, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ssvqc"]
+font = ExtResource("5_264po")
+font_size = 6
+font_color = Color(0.41960785, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1j6l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pl11u"]
+texture = ExtResource("9_trtic")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+modulate_color = Color(0.13, 0.13, 0.13, 0.8980392)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5sy4"]
 font = ExtResource("3_lbhrr")
-font_size = 8
+font_size = 10
+
+[sub_resource type="Theme" id="Theme_ca42v"]
+default_font = ExtResource("3_lbhrr")
+default_font_size = 6
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1kice"]
+texture = ExtResource("9_trtic")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+modulate_color = Color(0, 0.46666667, 0.89411765, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5newe"]
+font = ExtResource("5_264po")
+font_size = 6
+font_color = Color(0, 0.46666667, 0.89411765, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vtaks"]
 
@@ -59,19 +110,101 @@ VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_dinhu")
 VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_kvuet")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_trtic")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rysoc"]
+[sub_resource type="LabelSettings" id="LabelSettings_ir15t"]
+font = ExtResource("3_lbhrr")
+font_size = 8
+font_color = Color(0.41215247, 0.41215247, 0.41215247, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ssvqc"]
+[sub_resource type="Theme" id="Theme_kvuet"]
+default_font = ExtResource("3_lbhrr")
+default_font_size = 8
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhx41"]
+texture = ExtResource("14_e1j6l")
+texture_margin_left = 2.0
+texture_margin_top = 1.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qnb83"]
 texture = ExtResource("9_trtic")
 texture_margin_left = 2.0
 texture_margin_top = 2.0
 texture_margin_right = 2.0
 texture_margin_bottom = 2.0
-modulate_color = Color(0.54, 0.54, 0.54, 1)
+modulate_color = Color(0.57254905, 0.5686275, 0.5686275, 1)
 
-[sub_resource type="Theme" id="Theme_kvuet"]
-default_font = ExtResource("3_lbhrr")
-default_font_size = 8
+[sub_resource type="LabelSettings" id="LabelSettings_pl11u"]
+font = ExtResource("3_lbhrr")
+font_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5newe"]
+texture = ExtResource("9_trtic")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+modulate_color = Color(0.76862746, 0.41568628, 0.1764706, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e1j6l"]
+texture = ExtResource("14_e1j6l")
+texture_margin_left = 2.0
+texture_margin_top = 1.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bt5mj"]
+texture = ExtResource("9_trtic")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+modulate_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ir15t"]
+texture = ExtResource("9_trtic")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+modulate_color = Color(0.1764706, 0.57254905, 0.99215686, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sww3w"]
+texture = ExtResource("9_trtic")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+modulate_color = Color(0.65882355, 0.94509804, 0.43137255, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bhx41"]
+font = ExtResource("3_lbhrr")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_qnb83"]
+font = ExtResource("5_264po")
+font_size = 8
+font_color = Color(1, 0.89411765, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_suyxu"]
+texture = ExtResource("9_trtic")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+modulate_color = Color(1, 0.87058824, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sgl2t"]
+font = ExtResource("3_lbhrr")
+font_size = 6
+
+[sub_resource type="Environment" id="Environment_5newe"]
+background_mode = 3
+background_canvas_max_layer = 1
+glow_enabled = true
+glow_intensity = 0.92
+glow_strength = 0.98
+glow_bloom = 0.42
 
 [node name="Node2D" type="Control" unique_id=1144214665]
 layout_mode = 3
@@ -89,62 +222,12 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -90.0
-offset_top = 10.0
 offset_right = 90.0
-offset_bottom = 45.0
+offset_bottom = 35.0
 grow_horizontal = 2
 mouse_filter = 2
 
-[node name="Coins" type="TextureRect" parent="UI/Top" unique_id=1387960594]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -72.0
-offset_top = -3.5
-offset_right = -64.0
-offset_bottom = 4.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_iywne")
-
-[node name="CoinsLabel" type="Label" parent="UI/Top/Coins" unique_id=777836732]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 9.0
-offset_top = -8.0
-offset_right = 29.0
-offset_bottom = 9.0
-grow_vertical = 2
-text = "0"
-label_settings = SubResource("LabelSettings_u5sy4")
-vertical_alignment = 1
-
-[node name="CoinsReward" type="Label" parent="UI/Top/Coins" unique_id=1484779592]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -5.0
-offset_top = 5.0
-offset_right = 10.0
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "0"
-label_settings = SubResource("LabelSettings_p57ef")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PriorLevelPanel" type="Panel" parent="UI/Top" unique_id=711824490]
+[node name="PriorLevelPanel" type="Button" parent="UI/Top" unique_id=1773024431]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -159,8 +242,7 @@ offset_right = -13.0
 offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-theme = ExtResource("2_lnu2h")
+theme = ExtResource("1_5newe")
 
 [node name="PriorLevelLabel" type="Label" parent="UI/Top/PriorLevelPanel" unique_id=549682001]
 layout_mode = 1
@@ -169,10 +251,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -2.0
-offset_top = -3.5
-offset_right = 2.0
-offset_bottom = 3.5
+offset_left = -3.0
+offset_top = -5.5
+offset_right = 3.0
+offset_bottom = 5.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "0"
@@ -215,7 +297,7 @@ label_settings = SubResource("LabelSettings_lbhrr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NextLevelPanel" type="Panel" parent="UI/Top" unique_id=426183582]
+[node name="NextLevelPanel" type="Button" parent="UI/Top" unique_id=273404386]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -229,28 +311,27 @@ offset_right = 33.0
 offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-theme = ExtResource("2_lnu2h")
+theme = ExtResource("1_5newe")
 
-[node name="NextLevelLabel" type="Label" parent="UI/Top/NextLevelPanel" unique_id=1401463095]
+[node name="NextLevelLabel" type="Label" parent="UI/Top/NextLevelPanel" unique_id=710698285]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -2.0
-offset_top = -3.5
-offset_right = 2.0
-offset_bottom = 3.5
+offset_left = -3.0
+offset_top = -5.5
+offset_right = 3.0
+offset_bottom = 5.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "2"
-label_settings = SubResource("LabelSettings_gee14")
+text = "0"
+label_settings = SubResource("LabelSettings_37s47")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelRemainingLabel" type="Label" parent="UI/Top" unique_id=778912284]
+[node name="LevelRemainingLabel" type="RichTextLabel" parent="UI/Top" unique_id=227305652]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -259,17 +340,98 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 35.0
-offset_top = -11.5
+offset_top = -15.5
 offset_right = 50.0
-offset_bottom = 8.5
+offset_bottom = 4.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "(10)"
-label_settings = SubResource("LabelSettings_p57ef")
+theme_override_fonts/normal_font = ExtResource("3_lbhrr")
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "10"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelHP" type="Label" parent="UI/Top" unique_id=2058356411]
+[node name="HPs" type="Panel" parent="UI/Top" unique_id=2056819556]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.5
+anchor_right = 0.7
+anchor_bottom = 0.5
+offset_left = -20.000004
+offset_top = 22.5
+offset_right = 20.0
+offset_bottom = 28.500023
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_264po")
+
+[node name="HPsProgressbar" type="ProgressBar" parent="UI/Top/HPs" unique_id=1874952012]
 unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = -1.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_rysoc")
+theme_override_styles/fill = SubResource("StyleBoxTexture_ssvqc")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="HPsLabel" type="Label" parent="UI/Top/HPs" unique_id=742435545]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -13.5
+offset_top = -14.0
+offset_right = 13.5
+offset_bottom = 6.0
+grow_horizontal = 2
+text = "44.4mm HP"
+label_settings = SubResource("LabelSettings_ssvqc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Center" type="Control" parent="UI" unique_id=1178142908]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.325
+anchor_right = 0.5
+anchor_bottom = 0.325
+offset_left = -90.0
+offset_top = -20.0
+offset_right = 90.0
+offset_bottom = 20.00003
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="StunProgress" type="Panel" parent="UI/Center" unique_id=490688331]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -11.000015
+offset_right = -6.0
+offset_bottom = 10.999985
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_lnu2h")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Center/StunProgress" unique_id=2131479832]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -277,120 +439,115 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -7.0
-offset_top = 9.5
-offset_right = 8.0
-offset_bottom = 29.5
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "0"
-label_settings = SubResource("LabelSettings_p57ef")
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("7_bt5mj")
+
+[node name="StunProgressBar" type="ProgressBar" parent="UI/Center/StunProgress" unique_id=1966818328]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_e1j6l")
+theme_override_styles/fill = SubResource("StyleBoxTexture_pl11u")
+value = 28.43
+fill_mode = 3
+show_percentage = false
 
 [node name="Bottom" type="Control" parent="UI" unique_id=2115466624]
-visible = false
 layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -90.0
-offset_top = -45.0
-offset_right = 90.0
-offset_bottom = -10.0
+anchor_top = 0.65
+anchor_right = 1.0
+anchor_bottom = 0.65
+offset_top = -40.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 
-[node name="PickaxeButton" type="Button" parent="UI/Bottom" unique_id=1800178161]
+[node name="Coins" type="TextureRect" parent="UI/Bottom" unique_id=1387960594]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -19.5
-offset_right = -24.0
-offset_bottom = 20.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("4_p57ef")
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = 8.0
+offset_bottom = -10.0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("3_iywne")
 
-[node name="PickaxeButtonLabel" type="Label" parent="UI/Bottom/PickaxeButton" unique_id=2031443942]
+[node name="CoinsLabel" type="Label" parent="UI/Bottom/Coins" unique_id=777836732]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -2.0
-offset_top = -3.5
-offset_right = 2.0
-offset_bottom = 3.5
-grow_horizontal = 2
+offset_left = 9.0
+offset_top = -8.0
+offset_right = 29.0
+offset_bottom = 9.0
 grow_vertical = 2
-text = "M1 : 10
-0
-0.0"
-label_settings = SubResource("LabelSettings_iywne")
-horizontal_alignment = 1
+text = "44.4mm"
+label_settings = SubResource("LabelSettings_u5sy4")
 vertical_alignment = 1
 
-[node name="ExplosiveButton" type="Button" parent="UI/Bottom" unique_id=1384336307]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("4_p57ef")
-
-[node name="ExplosiveButtonLabel" type="Label" parent="UI/Bottom/ExplosiveButton" unique_id=1339930081]
+[node name="CoinsReward" type="RichTextLabel" parent="UI/Bottom/Coins" unique_id=554326713]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -2.0
-offset_top = -3.5
-offset_right = 2.0
-offset_bottom = 3.5
-grow_horizontal = 2
+offset_top = -16.0
+offset_right = 45.0
+offset_bottom = -7.0
 grow_vertical = 2
-text = "M2 : 10
-0
-0.0"
-label_settings = SubResource("LabelSettings_iywne")
-horizontal_alignment = 1
+mouse_filter = 2
+theme = SubResource("Theme_ca42v")
+bbcode_enabled = true
+text = "[color=gold]+44.4mm[/color]"
+scroll_active = false
 vertical_alignment = 1
 
-[node name="ClickButton" type="Button" parent="UI/Bottom" unique_id=644145938]
+[node name="Boss" type="Panel" parent="UI/Bottom" unique_id=1225079648]
+unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 6
+anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 24.0
-offset_top = -19.5
-offset_right = 64.0
-offset_bottom = 20.5
-grow_horizontal = 2
+offset_left = -95.0
+offset_top = 5.0
+offset_right = -5.0000305
+offset_bottom = 11.0
+grow_horizontal = 0
 grow_vertical = 2
-theme = ExtResource("4_p57ef")
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_264po")
 
-[node name="ClickButtonLabel" type="Label" parent="UI/Bottom/ClickButton" unique_id=73788187]
+[node name="BossProgressbar" type="ProgressBar" parent="UI/Bottom/Boss" unique_id=1769626067]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = -1.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_rysoc")
+theme_override_styles/fill = SubResource("StyleBoxTexture_1kice")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="BossLabel" type="Label" parent="UI/Bottom/Boss" unique_id=1228654932]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -398,16 +555,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -2.0
-offset_top = -3.5
-offset_right = 2.0
-offset_bottom = 3.5
+offset_left = -24.499985
+offset_top = -17.0
+offset_right = 45.000015
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "C : 0
-0"
-label_settings = SubResource("LabelSettings_iywne")
-horizontal_alignment = 1
+text = "BOSS ! 30s"
+label_settings = SubResource("LabelSettings_5newe")
 vertical_alignment = 1
 
 [node name="BottomMenu" type="Panel" parent="UI" unique_id=1786741189]
@@ -431,9 +586,180 @@ custom_minimum_size = Vector2(100, 4.21)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 42
+theme_override_constants/separation = 2
+
+[node name="Space" type="Control" parent="UI/BottomMenu/ScrollContainer/VBoxContainer" unique_id=667969027]
+layout_mode = 2
+
+[node name="ClickersTitle" type="Control" parent="UI/BottomMenu/ScrollContainer/VBoxContainer" unique_id=801990565]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ClickersLabel" type="Label" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/ClickersTitle" unique_id=1475956831]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.5
+anchor_right = 0.95
+anchor_bottom = 0.5
+grow_vertical = 2
+text = "Clickers"
+label_settings = SubResource("LabelSettings_ir15t")
+
+[node name="Clicker" type="Control" parent="UI/BottomMenu/ScrollContainer/VBoxContainer" unique_id=362126429]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Clicker" unique_id=38304131]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+offset_bottom = -5.0
+mouse_filter = 2
+theme = ExtResource("2_lnu2h")
+
+[node name="Image" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Clicker/Panel" unique_id=957461565]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 39.0
+offset_bottom = 37.0
+mouse_filter = 2
+theme = ExtResource("6_vtaks")
+
+[node name="Shadow" type="TextureRect" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Clicker/Panel/Image" unique_id=2020494823]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_1kice")
+
+[node name="TextureRect" type="TextureRect" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Clicker/Panel/Image" unique_id=943056423]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.5
+offset_top = -11.5
+offset_right = 8.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_ca42v")
+
+[node name="LabelClickerUpgrade" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Clicker/Panel" unique_id=1113248421]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 42.0
+offset_top = 1.0
+offset_right = 161.0
+offset_bottom = 39.0
+mouse_filter = 2
+theme = SubResource("Theme_kvuet")
+bbcode_enabled = true
+text = "Clicker - lvl 0
+10 per click"
+scroll_active = false
+shortcut_keys_enabled = false
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Clicker/Panel" unique_id=1299144616]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme = ExtResource("13_bt5mj")
+
+[node name="LabelClickerUpgradeButton" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Clicker/Panel/Button" unique_id=459898309]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_kvuet")
+bbcode_enabled = true
+text = "[color=gold]2.75aa
+coins[/color]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelClickerUpgradeButtonColor" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Clicker/Panel/Button" unique_id=598277100]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -4.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bhx41")
+
+[node name="BlockPanelClicker" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Clicker/Panel" unique_id=674936696]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme = ExtResource("13_37s47")
+
+[node name="HelpersTitle" type="Control" parent="UI/BottomMenu/ScrollContainer/VBoxContainer" unique_id=1780615008]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HelpersLabel" type="Label" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/HelpersTitle" unique_id=395459953]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.5
+anchor_right = 0.95
+anchor_bottom = 0.5
+grow_vertical = 2
+text = "Helpers"
+label_settings = SubResource("LabelSettings_ir15t")
 
 [node name="Pickaxe" type="Control" parent="UI/BottomMenu/ScrollContainer/VBoxContainer" unique_id=635849779]
+custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
 mouse_filter = 2
 
@@ -444,8 +770,6 @@ anchors_preset = -1
 anchor_left = 0.05
 anchor_right = 0.95
 anchor_bottom = 1.0
-offset_top = 2.0
-offset_bottom = 47.0
 mouse_filter = 2
 theme = ExtResource("6_kvuet")
 
@@ -457,6 +781,22 @@ offset_right = 39.0
 offset_bottom = 37.0
 mouse_filter = 2
 theme = ExtResource("6_vtaks")
+
+[node name="Shadow" type="TextureRect" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel/Image" unique_id=192049700]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_1kice")
 
 [node name="TextureRect" type="TextureRect" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel/Image" unique_id=668417617]
 layout_mode = 1
@@ -485,9 +825,8 @@ offset_top = -5.0
 offset_bottom = -1.0
 mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxTexture_rysoc")
-theme_override_styles/fill = SubResource("StyleBoxTexture_ssvqc")
+theme_override_styles/fill = SubResource("StyleBoxTexture_qnb83")
 step = 1.0
-value = 100.0
 show_percentage = false
 
 [node name="LabelPickaxeUpgrade" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel" unique_id=113066711]
@@ -501,17 +840,939 @@ mouse_filter = 2
 theme = SubResource("Theme_kvuet")
 bbcode_enabled = true
 text = "[color=gray]Pickaxe[/color] - lvl 0
-[color=gold]50 coins[/color]
-10 dps"
+10 dps
+Every 2s"
 scroll_active = false
 shortcut_keys_enabled = false
 vertical_alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel" unique_id=538534869]
-layout_mode = 0
-offset_left = 114.0
-offset_right = 156.0
+[node name="Button" type="Button" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel" unique_id=1759151161]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme = ExtResource("13_bt5mj")
+
+[node name="LabelPickaxeUpgradeButton" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel/Button" unique_id=1737449192]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_kvuet")
+bbcode_enabled = true
+text = "[color=gold]50
+coins[/color]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelPickaxeUpgradeButtonPanel" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel/Button" unique_id=164300736]
+unique_name_in_owner = true
+modulate = Color(0.57254905, 0.5686275, 0.5686275, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -4.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bhx41")
+
+[node name="BlockPanelPickaxe" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel" unique_id=1332550156]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme = ExtResource("13_37s47")
+
+[node name="LockedPickaxe" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel" unique_id=289430000]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_lnu2h")
+
+[node name="Label" type="Label" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel/LockedPickaxe" unique_id=6624189]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "?"
+label_settings = SubResource("LabelSettings_pl11u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Drill" type="Control" parent="UI/BottomMenu/ScrollContainer/VBoxContainer" unique_id=799279410]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Drill" unique_id=759333918]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource("6_kvuet")
+
+[node name="Image" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Drill/Panel" unique_id=1298659229]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 39.0
+offset_bottom = 37.0
+mouse_filter = 2
+theme = ExtResource("6_vtaks")
+
+[node name="Shadow" type="TextureRect" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Drill/Panel/Image" unique_id=548170470]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_1kice")
+
+[node name="TextureRect" type="TextureRect" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Drill/Panel/Image" unique_id=255751358]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -13.5
+offset_right = 7.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("18_e1j6l")
+
+[node name="ProgressBarDrillUpgrade" type="ProgressBar" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Drill/Panel" unique_id=77997167]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = -1.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_rysoc")
+theme_override_styles/fill = SubResource("StyleBoxTexture_5newe")
+step = 1.0
+show_percentage = false
+
+[node name="LabelDrillUpgrade" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Drill/Panel" unique_id=1730240091]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 42.0
+offset_top = 1.0
+offset_right = 161.0
+offset_bottom = 39.0
+mouse_filter = 2
+theme = SubResource("Theme_kvuet")
+bbcode_enabled = true
+text = "[color=gray]Pickaxe[/color] - lvl 0
+10 dps
+Every 2s"
+scroll_active = false
+shortcut_keys_enabled = false
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Drill/Panel" unique_id=535393076]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme = ExtResource("13_bt5mj")
+
+[node name="LabelDrillUpgradeButton" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Drill/Panel/Button" unique_id=456609032]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_kvuet")
+bbcode_enabled = true
+text = "[color=gold]50
+coins[/color]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelDrillUpgradeButtonPanel" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Drill/Panel/Button" unique_id=1307169300]
+unique_name_in_owner = true
+modulate = Color(0.76862746, 0.41568628, 0.1764706, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -4.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_e1j6l")
+
+[node name="BlockPanelDrill" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Drill/Panel" unique_id=354620611]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme = ExtResource("13_37s47")
+
+[node name="LockedDrill" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Drill/Panel" unique_id=427367269]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_lnu2h")
+
+[node name="Label" type="Label" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Drill/Panel/LockedDrill" unique_id=520644970]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "?"
+label_settings = SubResource("LabelSettings_pl11u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dynamite" type="Control" parent="UI/BottomMenu/ScrollContainer/VBoxContainer" unique_id=415181894]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite" unique_id=848613452]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource("6_kvuet")
+
+[node name="Image" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel" unique_id=1327771648]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 39.0
+offset_bottom = 37.0
+mouse_filter = 2
+theme = ExtResource("6_vtaks")
+
+[node name="Shadow" type="TextureRect" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel/Image" unique_id=1941418389]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_1kice")
+
+[node name="TextureRect" type="TextureRect" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel/Image" unique_id=80882202]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.5
+offset_top = -7.0
+offset_right = 6.5
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("11_ir15t")
+
+[node name="ProgressBarDynamiteUpgrade" type="ProgressBar" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel" unique_id=1488861095]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = -1.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_rysoc")
+theme_override_styles/fill = SubResource("StyleBoxTexture_bt5mj")
+step = 1.0
+show_percentage = false
+
+[node name="LabelDynamiteUpgrade" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel" unique_id=1169220168]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 42.0
+offset_top = 1.0
+offset_right = 161.0
+offset_bottom = 39.0
+mouse_filter = 2
+theme = SubResource("Theme_kvuet")
+bbcode_enabled = true
+text = "[color=red]Dynamite[/color] - lvl 0
+10 dps
+Every 2s"
+scroll_active = false
+shortcut_keys_enabled = false
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel" unique_id=866908231]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme = ExtResource("13_bt5mj")
+
+[node name="LabelDynamiteUpgradeButton" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel/Button" unique_id=389795619]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_kvuet")
+bbcode_enabled = true
+text = "[color=gold]50
+coins[/color]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelDynamiteUpgradeButtonColor" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel/Button" unique_id=972954963]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -4.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bhx41")
+
+[node name="BlockPanelDynamite" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel" unique_id=1462589409]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme = ExtResource("13_37s47")
+
+[node name="LockedDynamite" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel" unique_id=646165158]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_lnu2h")
+
+[node name="Label" type="Label" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel/LockedDynamite" unique_id=84267881]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "?"
+label_settings = SubResource("LabelSettings_pl11u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Laser" type="Control" parent="UI/BottomMenu/ScrollContainer/VBoxContainer" unique_id=1178105353]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Laser" unique_id=1556420925]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource("6_kvuet")
+
+[node name="Image" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Laser/Panel" unique_id=1240233438]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 39.0
+offset_bottom = 37.0
+mouse_filter = 2
+theme = ExtResource("6_vtaks")
+
+[node name="Shadow" type="TextureRect" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Laser/Panel/Image" unique_id=5752891]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_1kice")
+
+[node name="TextureRect" type="TextureRect" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Laser/Panel/Image" unique_id=1446812524]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.5
+offset_top = -7.0
+offset_right = 6.5
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("17_37s47")
+
+[node name="ProgressBarLaserUpgrade" type="ProgressBar" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Laser/Panel" unique_id=803661004]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = -1.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_rysoc")
+theme_override_styles/fill = SubResource("StyleBoxTexture_ir15t")
+step = 1.0
+show_percentage = false
+
+[node name="LabelLaserUpgrade" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Laser/Panel" unique_id=210278935]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 42.0
+offset_top = 1.0
+offset_right = 161.0
+offset_bottom = 39.0
+mouse_filter = 2
+theme = SubResource("Theme_kvuet")
+bbcode_enabled = true
+text = "[color=red]Dynamite[/color] - lvl 0
+10 dps
+Every 2s"
+scroll_active = false
+shortcut_keys_enabled = false
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Laser/Panel" unique_id=177155215]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme = ExtResource("13_bt5mj")
+
+[node name="LabelLaserUpgradeButton" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Laser/Panel/Button" unique_id=906204672]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_kvuet")
+bbcode_enabled = true
+text = "[color=gold]50
+coins[/color]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelLaserUpgradeButtonColor" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Laser/Panel/Button" unique_id=897796940]
+unique_name_in_owner = true
+modulate = Color(0.1764706, 0.57254905, 0.99215686, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -4.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bhx41")
+
+[node name="BlockPanelLaser" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Laser/Panel" unique_id=1164410303]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme = ExtResource("13_37s47")
+
+[node name="LockedLaser" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Laser/Panel" unique_id=1872159881]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_lnu2h")
+
+[node name="Label" type="Label" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Laser/Panel/LockedLaser" unique_id=368400589]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "?"
+label_settings = SubResource("LabelSettings_pl11u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atomizer" type="Control" parent="UI/BottomMenu/ScrollContainer/VBoxContainer" unique_id=401625367]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Atomizer" unique_id=493024451]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource("6_kvuet")
+
+[node name="Image" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Atomizer/Panel" unique_id=476619785]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 39.0
+offset_bottom = 37.0
+mouse_filter = 2
+theme = ExtResource("6_vtaks")
+
+[node name="Shadow" type="TextureRect" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Atomizer/Panel/Image" unique_id=1153054457]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_1kice")
+
+[node name="TextureRect" type="TextureRect" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Atomizer/Panel/Image" unique_id=201554015]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.5
+offset_top = -7.0
+offset_right = 6.5
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("21_pl11u")
+
+[node name="ProgressBarAtomizerUpgrade" type="ProgressBar" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Atomizer/Panel" unique_id=1327993067]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = -1.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_rysoc")
+theme_override_styles/fill = SubResource("StyleBoxTexture_sww3w")
+step = 1.0
+show_percentage = false
+
+[node name="LabelAtomizerUpgrade" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Atomizer/Panel" unique_id=1754026813]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 42.0
+offset_top = 1.0
+offset_right = 161.0
+offset_bottom = 39.0
+mouse_filter = 2
+theme = SubResource("Theme_kvuet")
+bbcode_enabled = true
+text = "[color=red]Dynamite[/color] - lvl 0
+10 dps
+Every 2s"
+scroll_active = false
+shortcut_keys_enabled = false
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Atomizer/Panel" unique_id=1646143672]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme = ExtResource("13_bt5mj")
+
+[node name="LabelAtomizerUpgradeButton" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Atomizer/Panel/Button" unique_id=924165718]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_kvuet")
+bbcode_enabled = true
+text = "[color=gold]50
+coins[/color]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelAtomizerUpgradeButtonColor" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Atomizer/Panel/Button" unique_id=305430945]
+unique_name_in_owner = true
+modulate = Color(0.65882355, 0.94509804, 0.43137255, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -4.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bhx41")
+
+[node name="BlockPanelAtomizer" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Atomizer/Panel" unique_id=1887285505]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme = ExtResource("13_37s47")
+
+[node name="LockedAtomizer" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Atomizer/Panel" unique_id=1969393107]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_lnu2h")
+
+[node name="Label" type="Label" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Atomizer/Panel/LockedAtomizer" unique_id=582890550]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "?"
+label_settings = SubResource("LabelSettings_pl11u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Space2" type="Control" parent="UI/BottomMenu/ScrollContainer/VBoxContainer" unique_id=859325008]
+layout_mode = 2
+
+[node name="OfflineIncome" type="Control" parent="UI" unique_id=1495723864]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/OfflineIncome" unique_id=544496617]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7372549)
+
+[node name="Panel" type="Panel" parent="UI/OfflineIncome" unique_id=1044606532]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = -40.0
+offset_right = -30.0
 offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_lnu2h")
+
+[node name="Title" type="Label" parent="UI/OfflineIncome/Panel" unique_id=612458318]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.5
+offset_right = 34.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Offline Income :"
+label_settings = SubResource("LabelSettings_bhx41")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OfflineIncomeLabel" type="Label" parent="UI/OfflineIncome/Panel" unique_id=1188713528]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -18.87
+offset_right = 37.5
+offset_bottom = 4.1299706
+grow_horizontal = 2
+grow_vertical = 2
+text = "+44.4m coins"
+label_settings = SubResource("LabelSettings_qnb83")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bar" type="Control" parent="UI/OfflineIncome/Panel" unique_id=855909122]
+layout_mode = 1
+anchor_left = 0.1
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.5
+offset_top = 2.5
+offset_bottom = 2.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IncomeProgressBar" type="Panel" parent="UI/OfflineIncome/Panel/Bar" unique_id=1745243081]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -3.0000153
+offset_right = -11.0
+offset_bottom = 3.0000114
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_264po")
+
+[node name="OfflineIncomeProgressBar" type="ProgressBar" parent="UI/OfflineIncome/Panel/Bar/IncomeProgressBar" unique_id=2029341261]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_rysoc")
+theme_override_styles/fill = SubResource("StyleBoxTexture_suyxu")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="Hours" type="Label" parent="UI/OfflineIncome/Panel/Bar" unique_id=1395861020]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -5.5
+offset_bottom = 5.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "2h"
+label_settings = SubResource("LabelSettings_sgl2t")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="UI/OfflineIncome/Panel" unique_id=670119645]
+modulate = Color(1, 0.8901961, 0.019607844, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.5
+offset_top = -25.0
+offset_right = 16.5
+offset_bottom = -4.0000153
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_5newe")
+text = "Yay !"
 
 [node name="GameManager" type="Node" parent="." unique_id=870548900]
 unique_name_in_owner = true
@@ -526,10 +1787,30 @@ script = ExtResource("8_0tnpc")
 
 [node name="Timer" type="Timer" parent="GameManager/HelperManager/Pickaxe" unique_id=743788593]
 
-[node name="Explosive" type="Node" parent="GameManager/HelperManager" unique_id=916089237]
+[node name="Drill" type="Node" parent="GameManager/HelperManager" unique_id=1722862428]
 script = ExtResource("8_0tnpc")
 
-[node name="Timer" type="Timer" parent="GameManager/HelperManager/Explosive" unique_id=1506508554]
+[node name="Timer" type="Timer" parent="GameManager/HelperManager/Drill" unique_id=861379103]
+
+[node name="Dynamite" type="Node" parent="GameManager/HelperManager" unique_id=916089237]
+script = ExtResource("8_0tnpc")
+
+[node name="Timer" type="Timer" parent="GameManager/HelperManager/Dynamite" unique_id=1506508554]
+
+[node name="Laser" type="Node" parent="GameManager/HelperManager" unique_id=1260471644]
+script = ExtResource("8_0tnpc")
+
+[node name="Timer" type="Timer" parent="GameManager/HelperManager/Laser" unique_id=1030674338]
+
+[node name="Atomizer" type="Node" parent="GameManager/HelperManager" unique_id=1420800179]
+script = ExtResource("8_0tnpc")
+
+[node name="Timer" type="Timer" parent="GameManager/HelperManager/Atomizer" unique_id=1832590837]
+
+[node name="BossTimer" type="Timer" parent="GameManager" unique_id=1467714818]
+unique_name_in_owner = true
+wait_time = 30.0
+one_shot = true
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1254367724]
 layout_mode = 1
@@ -555,11 +1836,13 @@ grow_vertical = 2
 [node name="GridContainer" type="GridContainer" parent="SubViewportContainer/SubViewport/Control" unique_id=1042302281]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_top = 8.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -572,7 +1855,15 @@ unique_name_in_owner = true
 position = Vector2(88.96, 106.565)
 script = ExtResource("2_yqjtg")
 
-[connection signal="pressed" from="UI/Bottom/PickaxeButton" to="GameManager" method="pickaxe_upgrade_button"]
-[connection signal="pressed" from="UI/Bottom/ExplosiveButton" to="GameManager" method="explosive_upgrade_button"]
-[connection signal="pressed" from="UI/Bottom/ClickButton" to="GameManager" method="clicker_upgrade_button"]
-[connection signal="pressed" from="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel/TextureButton" to="GameManager" method="pickaxe_upgrade_button"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=335252306]
+environment = SubResource("Environment_5newe")
+
+[connection signal="pressed" from="UI/Top/PriorLevelPanel" to="GameManager" method="click_past_level"]
+[connection signal="pressed" from="UI/Top/NextLevelPanel" to="GameManager" method="click_next_level"]
+[connection signal="pressed" from="UI/BottomMenu/ScrollContainer/VBoxContainer/Clicker/Panel/Button" to="GameManager" method="clicker_upgrade_button"]
+[connection signal="pressed" from="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel/Button" to="GameManager" method="pickaxe_upgrade_button"]
+[connection signal="pressed" from="UI/BottomMenu/ScrollContainer/VBoxContainer/Drill/Panel/Button" to="GameManager" method="drill_upgrade_button"]
+[connection signal="pressed" from="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel/Button" to="GameManager" method="dynamite_upgrade_button"]
+[connection signal="pressed" from="UI/BottomMenu/ScrollContainer/VBoxContainer/Laser/Panel/Button" to="GameManager" method="laser_upgrade_button"]
+[connection signal="pressed" from="UI/BottomMenu/ScrollContainer/VBoxContainer/Atomizer/Panel/Button" to="GameManager" method="atomizer_upgrade_button"]
+[connection signal="pressed" from="UI/OfflineIncome/Panel/Button" to="GameManager" method="close_offline_income"]

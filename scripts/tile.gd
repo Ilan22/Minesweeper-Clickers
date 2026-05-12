@@ -7,8 +7,8 @@ var y: int
 var isBomb: bool = false
 var isRevealed: bool = false
 var isFlagged: bool = false
-var max_hp: int
-var hp: int
+var max_hp: BigNumber
+var hp: BigNumber
 var isDark: bool = false
 
 const DARK_ONE: Rect2 = Rect2(Vector2(0, 0), Vector2(16,16))
@@ -41,11 +41,11 @@ const BOMB: Rect2 = Rect2(Vector2(112, 32), Vector2(16,16))
 @onready var dark_breaking_panel: Panel = %DarkBreakingPanel
 @onready var light_breaking_panel: Panel = %LightBreakingPanel
 
-func initialize(grid_x: int, grid_y: int, grid_hp):
+func initialize(grid_x: int, grid_y: int, grid_hp: BigNumber):
 	x = grid_x
 	y = grid_y
-	max_hp = grid_hp
-	hp = max_hp
+	max_hp = BigNumber.new().plus_equals(grid_hp)
+	hp = BigNumber.new().plus_equals(grid_hp)
 	
 func change_texture(newTexture: Rect2):
 	var atlas = AtlasTexture.new()

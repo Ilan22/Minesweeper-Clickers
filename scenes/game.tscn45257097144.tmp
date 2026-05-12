@@ -1,0 +1,725 @@
+[gd_scene format=3 uid="uid://cq2iqplhnluqw"]
+
+[ext_resource type="Script" uid="uid://d2po3wo8l33xi" path="res://scripts/game_manager.gd" id="1_uwrxv"]
+[ext_resource type="Theme" uid="uid://bgcvrj1oskbvd" path="res://themes/outline.tres" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://b0ljh5r0gchwd" path="res://scripts/camera.gd" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://rvxkrdsrprcb" path="res://sprites/coin.png" id="3_iywne"]
+[ext_resource type="FontFile" uid="uid://cs4x2nnnw54eq" path="res://fonts/PIXEARG_.TTF" id="3_lbhrr"]
+[ext_resource type="Theme" uid="uid://ct5siw8atawlr" path="res://themes/button.tres" id="4_p57ef"]
+[ext_resource type="Theme" uid="uid://f0rd7j1jep0s" path="res://themes/top_outline.tres" id="5_0tnpc"]
+[ext_resource type="Theme" uid="uid://bnrelamqwwj84" path="res://themes/menu_upgrade_outline.tres" id="6_kvuet"]
+[ext_resource type="Theme" uid="uid://c4w2k4cs5sfp" path="res://themes/outline_dark.tres" id="6_vtaks"]
+[ext_resource type="Script" uid="uid://br5ugyeofclnu" path="res://scripts/helper_manager.gd" id="7_gee14"]
+[ext_resource type="Texture2D" uid="uid://cq5j6i3bijkn7" path="res://sprites/pickaxe.png" id="7_kvpfn"]
+[ext_resource type="Script" uid="uid://dl4l5bleo4vr1" path="res://scripts/helper.gd" id="8_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://bvplcphyiuqyh" path="res://sprites/outline_light.png" id="9_trtic"]
+[ext_resource type="Theme" uid="uid://5ymr6lptcj5q" path="res://themes/pickaxe_upgrade_button.tres" id="10_trtic"]
+[ext_resource type="Texture2D" uid="uid://c7v040tf61cm7" path="res://sprites/dynamite.png" id="11_ir15t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5sy4"]
+font = ExtResource("3_lbhrr")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_p57ef"]
+line_spacing = -1.0
+font = ExtResource("3_lbhrr")
+font_size = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_0tnpc"]
+line_spacing = 0.0
+font = ExtResource("3_lbhrr")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_lbhrr"]
+font = ExtResource("3_lbhrr")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_gee14"]
+line_spacing = 0.0
+font = ExtResource("3_lbhrr")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_iywne"]
+line_spacing = 0.0
+font = ExtResource("3_lbhrr")
+font_size = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vtaks"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kvpfn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dinhu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kvuet"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trtic"]
+
+[sub_resource type="Theme" id="Theme_ir15t"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_vtaks")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_kvpfn")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_dinhu")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_kvuet")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_trtic")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rysoc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ssvqc"]
+texture = ExtResource("9_trtic")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+modulate_color = Color(0.54, 0.54, 0.54, 1)
+
+[sub_resource type="Theme" id="Theme_kvuet"]
+default_font = ExtResource("3_lbhrr")
+default_font_size = 8
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ir15t"]
+texture = ExtResource("9_trtic")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+modulate_color = Color(1, 0, 0, 1)
+
+[node name="Node2D" type="Control" unique_id=1144214665]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=256163687]
+
+[node name="Top" type="Control" parent="UI" unique_id=1506070931]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 45.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Coins" type="TextureRect" parent="UI/Top" unique_id=1387960594]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -3.5
+offset_right = -64.0
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_iywne")
+
+[node name="CoinsLabel" type="Label" parent="UI/Top/Coins" unique_id=777836732]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -8.0
+offset_right = 29.0
+offset_bottom = 9.0
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_u5sy4")
+vertical_alignment = 1
+
+[node name="CoinsReward" type="Label" parent="UI/Top/Coins" unique_id=1484779592]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = 5.0
+offset_right = 10.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_p57ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PriorLevelPanel" type="Panel" parent="UI/Top" unique_id=711824490]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -11.5
+offset_right = -13.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_lnu2h")
+
+[node name="PriorLevelLabel" type="Label" parent="UI/Top/PriorLevelPanel" unique_id=549682001]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -3.5
+offset_right = 2.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_0tnpc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentLevelPanel" type="Panel" parent="UI/Top" unique_id=1822645862]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_lnu2h")
+
+[node name="CurrentLevelLabel" type="Label" parent="UI/Top/CurrentLevelPanel" unique_id=1025091081]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -3.5
+offset_right = 2.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = SubResource("LabelSettings_lbhrr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextLevelPanel" type="Panel" parent="UI/Top" unique_id=426183582]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -11.5
+offset_right = 33.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_lnu2h")
+
+[node name="NextLevelLabel" type="Label" parent="UI/Top/NextLevelPanel" unique_id=1401463095]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -3.5
+offset_right = 2.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "2"
+label_settings = SubResource("LabelSettings_gee14")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelRemainingLabel" type="Label" parent="UI/Top" unique_id=778912284]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 35.0
+offset_top = -11.5
+offset_right = 50.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "(10)"
+label_settings = SubResource("LabelSettings_p57ef")
+vertical_alignment = 1
+
+[node name="LevelHP" type="Label" parent="UI/Top" unique_id=2058356411]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = 9.5
+offset_right = 8.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_p57ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bottom" type="Control" parent="UI" unique_id=2115466624]
+visible = false
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -45.0
+offset_right = 90.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="PickaxeButton" type="Button" parent="UI/Bottom" unique_id=1800178161]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -19.5
+offset_right = -24.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_p57ef")
+
+[node name="PickaxeButtonLabel" type="Label" parent="UI/Bottom/PickaxeButton" unique_id=2031443942]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -3.5
+offset_right = 2.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "M1 : 10
+0
+0.0"
+label_settings = SubResource("LabelSettings_iywne")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExplosiveButton" type="Button" parent="UI/Bottom" unique_id=1384336307]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_p57ef")
+
+[node name="ExplosiveButtonLabel" type="Label" parent="UI/Bottom/ExplosiveButton" unique_id=1339930081]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -3.5
+offset_right = 2.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "M2 : 10
+0
+0.0"
+label_settings = SubResource("LabelSettings_iywne")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClickButton" type="Button" parent="UI/Bottom" unique_id=644145938]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -19.5
+offset_right = 64.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_p57ef")
+
+[node name="ClickButtonLabel" type="Label" parent="UI/Bottom/ClickButton" unique_id=73788187]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -3.5
+offset_right = 2.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "C : 0
+0"
+label_settings = SubResource("LabelSettings_iywne")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomMenu" type="Panel" parent="UI" unique_id=1786741189]
+anchors_preset = -1
+anchor_top = 0.65
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+theme = ExtResource("5_0tnpc")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/BottomMenu" unique_id=2058612780]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+theme = SubResource("Theme_ir15t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/BottomMenu/ScrollContainer" unique_id=801901656]
+custom_minimum_size = Vector2(100, 4.21)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 47
+
+[node name="Pickaxe" type="Control" parent="UI/BottomMenu/ScrollContainer/VBoxContainer" unique_id=635849779]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe" unique_id=464980771]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 47.0
+mouse_filter = 2
+theme = ExtResource("6_kvuet")
+
+[node name="Image" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel" unique_id=488556156]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 39.0
+offset_bottom = 37.0
+mouse_filter = 2
+theme = ExtResource("6_vtaks")
+
+[node name="TextureRect" type="TextureRect" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel/Image" unique_id=668417617]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_kvpfn")
+
+[node name="ProgressBarPickaxeUpgrade" type="ProgressBar" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel" unique_id=781856941]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = -1.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_rysoc")
+theme_override_styles/fill = SubResource("StyleBoxTexture_ssvqc")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="LabelPickaxeUpgrade" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel" unique_id=113066711]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 42.0
+offset_top = 1.0
+offset_right = 161.0
+offset_bottom = 39.0
+mouse_filter = 2
+theme = SubResource("Theme_kvuet")
+bbcode_enabled = true
+text = "[color=gray]Pickaxe[/color] - lvl 0
+10 dps
+Every 2s"
+scroll_active = false
+shortcut_keys_enabled = false
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel" unique_id=1759151161]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme = ExtResource("10_trtic")
+
+[node name="LabelPickaxeUpgradeButton" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel/Button" unique_id=1737449192]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_kvuet")
+bbcode_enabled = true
+text = "[color=gold]50
+coins[/color]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dynamite" type="Control" parent="UI/BottomMenu/ScrollContainer/VBoxContainer" unique_id=415181894]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite" unique_id=848613452]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 47.0
+mouse_filter = 2
+theme = ExtResource("6_kvuet")
+
+[node name="Image" type="Panel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel" unique_id=1327771648]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 39.0
+offset_bottom = 37.0
+mouse_filter = 2
+theme = ExtResource("6_vtaks")
+
+[node name="TextureRect" type="TextureRect" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel/Image" unique_id=80882202]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.5
+offset_top = -7.0
+offset_right = 6.5
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("11_ir15t")
+
+[node name="ProgressBarDynamiteUpgrade" type="ProgressBar" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel" unique_id=1488861095]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = -1.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_rysoc")
+theme_override_styles/fill = SubResource("StyleBoxTexture_ir15t")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="LabelDynamiteUpgrade" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel" unique_id=1169220168]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 42.0
+offset_top = 1.0
+offset_right = 161.0
+offset_bottom = 39.0
+mouse_filter = 2
+theme = SubResource("Theme_kvuet")
+bbcode_enabled = true
+text = "[color=red]Dynamite[/color] - lvl 0
+10 dps
+Every 2s"
+scroll_active = false
+shortcut_keys_enabled = false
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel" unique_id=866908231]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme = ExtResource("10_trtic")
+
+[node name="LabelDynamiteUpgradeButton" type="RichTextLabel" parent="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel/Button" unique_id=389795619]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_kvuet")
+bbcode_enabled = true
+text = "[color=gold]50
+coins[/color]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameManager" type="Node" parent="." unique_id=870548900]
+unique_name_in_owner = true
+script = ExtResource("1_uwrxv")
+
+[node name="HelperManager" type="Node" parent="GameManager" unique_id=258453165]
+unique_name_in_owner = true
+script = ExtResource("7_gee14")
+
+[node name="Pickaxe" type="Node" parent="GameManager/HelperManager" unique_id=268620544]
+script = ExtResource("8_0tnpc")
+
+[node name="Timer" type="Timer" parent="GameManager/HelperManager/Pickaxe" unique_id=743788593]
+
+[node name="Explosive" type="Node" parent="GameManager/HelperManager" unique_id=916089237]
+script = ExtResource("8_0tnpc")
+
+[node name="Timer" type="Timer" parent="GameManager/HelperManager/Explosive" unique_id=1506508554]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1254367724]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.65
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=630428292]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(180, 208)
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="SubViewportContainer/SubViewport" unique_id=1940242077]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="SubViewportContainer/SubViewport/Control" unique_id=1042302281]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
+columns = 7
+
+[node name="Camera" type="Camera2D" parent="SubViewportContainer/SubViewport/Control" unique_id=1071021489]
+unique_name_in_owner = true
+position = Vector2(88.96, 106.565)
+script = ExtResource("2_yqjtg")
+
+[connection signal="pressed" from="UI/Bottom/PickaxeButton" to="GameManager" method="pickaxe_upgrade_button"]
+[connection signal="pressed" from="UI/Bottom/ExplosiveButton" to="GameManager" method="explosive_upgrade_button"]
+[connection signal="pressed" from="UI/Bottom/ClickButton" to="GameManager" method="clicker_upgrade_button"]
+[connection signal="pressed" from="UI/BottomMenu/ScrollContainer/VBoxContainer/Pickaxe/Panel/Button" to="GameManager" method="pickaxe_upgrade_button"]
+[connection signal="pressed" from="UI/BottomMenu/ScrollContainer/VBoxContainer/Dynamite/Panel/Button" to="GameManager" method="explosive_upgrade_button"]

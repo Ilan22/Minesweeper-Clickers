@@ -67,7 +67,7 @@ func clamp_camera_position(new_pos: Vector2) -> Vector2:
 		clamped_pos.x = grid_position.x + grid_size.x / 2
 	
 	# Gérer l'axe Y
-	if (grid_size.y + 2) > screen_size.y:
+	if (grid_size.y + 2) > screen_size.y - 89:
 		# La grille + offset est plus grande que l'écran, on peut bouger avec offset
 		var min_y = grid_position.y + half_screen.y - max_offset
 		var max_y = grid_position.y + grid_size.y - half_screen.y + max_offset

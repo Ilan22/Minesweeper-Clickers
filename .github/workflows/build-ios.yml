@@ -1,76 +1,108 @@
 name: Build iOS
 
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - master
-  pull_request:
     branches:
       - master
 
 jobs:
-  build:
+  build-ios:
     runs-on: macos-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Download Godot 4
+      # -------------------------
+      # Install Godot
+      # -------------------------
+      - name: Download Godot
         run: |
           wget https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_macos.universal.zip
-          unzip Godot_v4.3-stable_macos.universal.zip -d godot_app
-          sudo mv "godot_app/Godot.app" /Applications/Godot.app
-          sudo ln -sf /Applications/Godot.app/Contents/MacOS/Godot /usr/local/bin/godot
+          unzip Godot_v4.3-stable_macos.universal.zip -d godot
 
-      - name: Download Godot Export Templates
+          sudo mv godot/Godot.app /Applications/Godot.app
+
+          sudo ln -s /Applications/Godot.app/Contents/MacOS/Godot /usr/local/bin/godot
+
+      # -------------------------
+      # Install export templates
+      # -------------------------
+      - name: Install export templates
         run: |
           mkdir -p ~/Library/Application\ Support/Godot/export_templates/4.3.stable
-          wget -P /tmp https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
-          unzip /tmp/Godot_v4.3-stable_export_templates.tpz -d /tmp/godot_templates
-          mv /tmp/godot_templates/templates/* ~/Library/Application\ Support/Godot/export_templates/4.3.stable/
 
-      - name: Create build directory
-        run: mkdir -p build/ios
+          wget https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
 
+          unzip Godot_v4.3-stable_export_templates.tpz -d templates
+
+          mv templates/templates/* ~/Library/Application\ Support/Godot/export_templates/4.3.stable/
+
+      # -------------------------
+      # Export Xcode project
+      # -------------------------
       - name: Export iOS project
-        run: godot --headless --export-release "iOS" build/ios/MinesweepPixel.xcodeproj
-
-      - name: Patch Xcode project settings
         run: |
-          PBXPROJ=$(find build/ios -name "project.pbxproj" | head -1)
-          # Fix deployment target
-          sed -i '' 's/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]*/IPHONEOS_DEPLOYMENT_TARGET = 12.0/g' "$PBXPROJ"
-          # Remove conflicting iPhone Distribution identity so manual signing works
-          sed -i '' 's/CODE_SIGN_IDENTITY = "iPhone Distribution"/CODE_SIGN_IDENTITY = ""/g' "$PBXPROJ"
-          sed -i '' 's/"CODE_SIGN_IDENTITY[^"]*" = "iPhone Distribution"/"CODE_SIGN_IDENTITY" = ""/g' "$PBXPROJ"
+          mkdir -p build/ios
 
-      - name: Build iOS project
+          godot --headless --path . --export-release "iOS" build/ios/MinesweepPixel.xcodeproj
+
+      # -------------------------
+      # Find Xcode project
+      # -------------------------
+      - name: Locate project
+        id: locate
         run: |
           PROJECT=$(find build/ios -name "*.xcodeproj" | head -1)
+
+          echo "PROJECT=$PROJECT" >> $GITHUB_ENV
+
           SCHEME=$(basename "$PROJECT" .xcodeproj)
-          xcodebuild -project "$PROJECT" -scheme "$SCHEME" \
+
+          echo "SCHEME=$SCHEME" >> $GITHUB_ENV
+
+      # -------------------------
+      # Build app
+      # -------------------------
+      - name: Build .app
+        run: |
+          xcodebuild \
+            -project "$PROJECT" \
+            -scheme "$SCHEME" \
             -sdk iphoneos \
             -configuration Release \
-            -destination "generic/platform=iOS" \
-            -archivePath build/ios/MinesweepPixel.xcarchive \
-            archive \
-            CODE_SIGN_IDENTITY="" \
-            CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO \
-            AD_HOC_CODE_SIGNING_ALLOWED=YES
+            build
 
-      - name: Export IPA
+      # -------------------------
+      # Locate .app
+      # -------------------------
+      - name: Find app
         run: |
-          APPS_DIR="build/ios/MinesweepPixel.xcarchive/Products/Applications"
-          mkdir -p "$APPS_DIR/Payload"
-          APP=$(find "$APPS_DIR" -maxdepth 1 -name "*.app" | head -1)
-          mv "$APP" "$APPS_DIR/Payload/"
-          cd "$APPS_DIR"
-          zip -r ../../../../App.ipa Payload/
+          APP=$(find ~/Library/Developer/Xcode/DerivedData -name "*.app" | head -1)
 
-      - name: Upload IPA to GitHub Artifacts
+          echo "APP=$APP" >> $GITHUB_ENV
+
+          echo "Found app:"
+          echo $APP
+
+      # -------------------------
+      # Create IPA structure
+      # -------------------------
+      - name: Create IPA
+        run: |
+          mkdir Payload
+
+          cp -R "$APP" Payload/
+
+          zip -r App.ipa Payload
+
+      # -------------------------
+      # Upload artifact
+      # -------------------------
+      - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
-          name: Ipa
-          path: build/App.ipa
+          name: ios-ipa
+          path: App.ipa
